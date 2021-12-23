@@ -4,6 +4,8 @@
     "paths": {
       "@appsmith/*": ["enterprise/*"],
       "test/*": ["../test/*"]
-    }
+    },
+    "sourceMap": false,
+    "noEmit": true
   }
 }
