@@ -22,6 +22,7 @@
     SENTRY_PROJECT = "appsmith"
     SENTRY_LOG_LEVEL = "info"
     REACT_APP_CLOUD_SERVICES_BASE_URL = "https://release-cs.appsmith.com"
+    NODE_OPTIONS='--max-old-space-size=2048'
 
 [context.deploy-preview]
   [context.deploy-preview.environment]
