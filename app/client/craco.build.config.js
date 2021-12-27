@@ -42,6 +42,21 @@ if (env === "PRODUCTION" || env === "STAGING") {
 module.exports = merge(common, {
   webpack: {
     plugins: plugins,
+    configure: (config) => {
+      const forkTsPlugin = config.plugins.find((plugin) => {
+        return plugin.constructor.name === "ForkTsCheckerWebpackPlugin";
+      });
+
+      if (forkTsPlugin) {
+        forkTsPlugin.memoryLimit = 2048;
+        forkTsPlugin.typescript = false;
+        forkTsPlugin.eslint = undefined;
+      }
+
+      console.log(forkTsPlugin);
+
+      return config;
+    },
   },
   jest: {
     configure: {

@@ -22,7 +22,7 @@
     SENTRY_PROJECT = "appsmith"
     SENTRY_LOG_LEVEL = "info"
     REACT_APP_CLOUD_SERVICES_BASE_URL = "https://release-cs.appsmith.com"
-    NODE_OPTIONS='--max-old-space-size=3000'
+    NODE_OPTIONS='--max-old-space-size=512'
 
 [context.deploy-preview]
   [context.deploy-preview.environment]
@@ -44,24 +44,24 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "API_PLACEHOLDER/api/:splat"
+  to = "/api/:splat"
   status = 200
   force = true
-  headers = { X-Forwarded-Host = "APP_HOST_PLACEHOLDER", X-Forwarded-Proto = "https" }
+  headers = { X-Forwarded-Host = "", X-Forwarded-Proto = "https" }
 
 [[redirects]]
   from = "/oauth2/*"
-  to = "API_PLACEHOLDER/oauth2/:splat"
+  to = "/oauth2/:splat"
   status = 200
   force = true
-  headers = { X-Forwarded-Host = "APP_HOST_PLACEHOLDER", X-Forwarded-Proto = "https" }
+  headers = { X-Forwarded-Host = "", X-Forwarded-Proto = "https" }
 
 [[redirects]]
   from = "/login/*"
-  to = "API_PLACEHOLDER/login/:splat"
+  to = "/login/:splat"
   status = 200
   force = true
-  headers = { X-Forwarded-Host = "APP_HOST_PLACEHOLDER", X-Forwarded-Proto = "https" }
+  headers = { X-Forwarded-Host = "", X-Forwarded-Proto = "https" }
 
 [[redirects]]
   from = "/f/*"
